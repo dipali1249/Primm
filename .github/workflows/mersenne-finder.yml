@@ -27,7 +27,7 @@ concurrency:
 jobs:
   find-mersenne-primes:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 60
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
