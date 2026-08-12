@@ -1,0 +1,58 @@
+# Continuous Mersenne prime finder — runs 12 short sessions per day.
+#
+# Each session fetches prime exponents n from the remote primes.txt,
+# computes M = 2^n - 1, and tests each for primality using:
+#   1. Trial division (factors of Mersenne numbers must be 2kn+1)
+#   2. The Lucas-Lehmer test (deterministic for Mersenne numbers)
+#
+# State is committed after each session so the search resumes exactly
+# where it left off.
+#
+# Schedule: every 2 hours, 12 times a day (00:00, 02:00, ..., 22:00 UTC).
+
+name: Mersenne Finder
+
+on:
+  schedule:
+    - cron: "0 */2 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mersenne-finder
+  cancel-in-progress: false
+
+jobs:
+  find-mersenne-primes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run Mersenne finder session
+        env:
+          MERSENNE_BUDGET_SECONDS: "270"
+          PRIMES_URL: "https://raw.githubusercontent.com/dipali1249/Prime/refs/heads/main/primes.txt"
+        run: python mersenne_finder.py
+
+      - name: Commit updated state and results
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add state.json mersenne_primes.txt session.log exponents.cache 2>/dev/null || true
+
+          if git diff --cached --quiet; then
+            echo "No changes this session — nothing to commit."
+          else
+            git commit -m "chore: mersenne finder session $(date -u +%FT%TZ)"
+            git push
+          fi
