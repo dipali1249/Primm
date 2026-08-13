@@ -44,3 +44,7 @@
 [2026-08-12 22:35:45]   ★ Mersenne PRIME: n=11213  M has 3376 digits  (trial_division=passed, LL=confirmed)
 [2026-08-12 22:38:06]   n=11681  M composite  (trial_division=no_small_factor, LL=rejected)
 [2026-08-12 22:39:42] Session end: index=1428/10995905, exponents_tested=1428, mersenne_primes_found=21, elapsed=272.3s
+[2026-08-13 01:26:49] Session start: index=1428, exponents_tested=1428, mersenne_primes_found=21, budget=270s
+[2026-08-13 01:26:55] Fetched 10995905 prime exponents from https://raw.githubusercontent.com/dipali1249/Prime/refs/heads/main/primes.txt
+[2026-08-13 01:31:05]   n=12577  M composite  (trial_division=no_small_factor, LL=rejected)
+[2026-08-13 01:31:28] Session end: index=1506/10995905, exponents_tested=1506, mersenne_primes_found=21, elapsed=272.4s
