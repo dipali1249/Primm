@@ -108,3 +108,6 @@
 [2026-08-14 16:48:35] Session start: index=2148, exponents_tested=2148, mersenne_primes_found=21, budget=270s
 [2026-08-14 16:48:43] Fetched 10995905 prime exponents from https://raw.githubusercontent.com/dipali1249/Prime/refs/heads/main/primes.txt
 [2026-08-14 16:53:14] Session end: index=2170/10995905, exponents_tested=2170, mersenne_primes_found=21, elapsed=271.3s
+[2026-08-14 18:45:36] Session start: index=2170, exponents_tested=2170, mersenne_primes_found=21, budget=270s
+[2026-08-14 18:45:43] Fetched 10995905 prime exponents from https://raw.githubusercontent.com/dipali1249/Prime/refs/heads/main/primes.txt
+[2026-08-14 18:50:24] Session end: index=2192/10995905, exponents_tested=2192, mersenne_primes_found=21, elapsed=281.2s
