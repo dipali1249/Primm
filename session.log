@@ -111,3 +111,7 @@
 [2026-08-14 18:45:36] Session start: index=2170, exponents_tested=2170, mersenne_primes_found=21, budget=270s
 [2026-08-14 18:45:43] Fetched 10995905 prime exponents from https://raw.githubusercontent.com/dipali1249/Prime/refs/heads/main/primes.txt
 [2026-08-14 18:50:24] Session end: index=2192/10995905, exponents_tested=2192, mersenne_primes_found=21, elapsed=281.2s
+[2026-08-14 20:25:34] Session start: index=2192, exponents_tested=2192, mersenne_primes_found=21, budget=270s
+[2026-08-14 20:25:40] Fetched 10995905 prime exponents from https://raw.githubusercontent.com/dipali1249/Prime/refs/heads/main/primes.txt
+[2026-08-14 20:27:25]   n=19429  M composite  (trial_division=no_small_factor, LL=rejected)
+[2026-08-14 20:30:16] Session end: index=2213/10995905, exponents_tested=2213, mersenne_primes_found=21, elapsed=276.3s
